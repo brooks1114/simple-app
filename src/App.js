@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Welcome from './components/welcome/Welcome'
 import Clock from './components/clock/Clock'
+import Contact from './components/contact/Contact'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <p>
           <Welcome name="Erik" />
           <Clock />
+          <Contact />
         </p>
         <a
           className="App-link"
