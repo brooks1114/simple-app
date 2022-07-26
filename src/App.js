@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Welcome from './components/welcome/Welcome'
+import Clock from './components/clock/Clock'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           <Welcome name="Erik" />
+          <Clock />
         </p>
         <a
           className="App-link"
