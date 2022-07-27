@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import SubmitButton from './SubmitButton'
 
 class Contact extends Component {
 
@@ -6,6 +7,7 @@ class Contact extends Component {
         super(props)
         this.state = {
 
+            submitButtonDisabled: true,
             submitted: false,
             formData: {
                 firstName: "",
@@ -20,11 +22,18 @@ class Contact extends Component {
     handleChange = (event) => {
         //since this.setState only does a shallow merge we are going to create a new object from the related object in state
         //this will allow us to make sure we don't lose data when calling setState method
-        // !!! Shallow merge means that the object would update the event target value only (i.e. email) if data on firstname existed it would be lost.
         let formData = { ...this.state.formData };
         formData[event.target.name] = event.target.value;
+
+        (!(formData.firstName === "") && !(formData.lastName === "") && !(formData.email === ""))
+            ? this.setState({ submitButtonDisabled: false })
+            : this.setState({ submitButtonDisabled: true })
+
+
         this.setState({ formData })
-    }
+
+    };
+
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -35,6 +44,7 @@ class Contact extends Component {
 
     resetForm = (event) => {
         this.setState({
+            submitButtonDisabled: true,
             submitted: false,
             formData: {
                 firstName: "",
@@ -44,10 +54,17 @@ class Contact extends Component {
         })
     }
 
+    changeState = () => {
+        this.setState({
+            formData: this.state.formData
+        });
+    };
+
 
     render() {
 
         if (this.state.submitted) {
+
             return (
                 <div>
                     Thank you, {this.state.formData.firstName} {this.state.formData.lastName}, for submitting the form <br />
@@ -71,7 +88,8 @@ class Contact extends Component {
                         <label>E-mail:</label>
                         <input onChange={this.handleChange} type="text" name="email" value={this.state.formData.email} />
                     </div>
-                    <button>Submit Form</button> <br />
+                    <SubmitButton formData={this.state.formData} submitButtonDisabled={this.state.submitButtonDisabled} />
+                    {/* <button onClick={this.changeState} disabled={this.state.submitButtonDisabled}>Submit Form</button> <br /> */}
                     {this.state.formData.firstName}
                     <br />
                     {this.state.formData.lastName}
