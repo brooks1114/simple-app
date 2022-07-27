@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import Welcome from './components/welcome/Welcome'
-import Clock from './components/clock/Clock'
+// import Clock from './components/clock/Clock'
+import ClockFunction from './components/clock/ClockFunction'
 import Contact from './components/contact/Contact'
 
 function App() {
@@ -9,11 +10,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <div>
           <Welcome name="Erik" />
-          <Clock />
+          <ClockFunction />
           <Contact />
-        </p>
+        </div>
         <a
           className="App-link"
           href="https://reactjs.org"
