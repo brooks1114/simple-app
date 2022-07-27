@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import Welcome from './components/welcome/Welcome'
-import Clock from './components/clock/Clock'
+// import Clock from './components/clock/Clock'
+import ClockFunction from './components/clock/ClockFunction'
 import Contact from './components/contact/Contact'
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           <Welcome name="Erik" />
-          <Clock />
+          <ClockFunction />
           <Contact />
         </p>
         <a

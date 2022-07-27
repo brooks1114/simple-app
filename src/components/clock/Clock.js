@@ -1,36 +1,39 @@
-import React, { Component } from 'react';
+// THis is a clock using class structure. 
+// This class was replaced by ClockFunction.js. Which uses functions and hooks.
 
-class Clock extends Component {
-    constructor(props) {
-        super(props)
-        this.state = { date: new Date() }
-    }
+// import React, { Component } from 'react';
 
-    // Called immediately after a component is mounted. Setting state here will trigger re-rendering.
-    componentDidMount() {
-        this.timerID = setInterval(
-            () => this.tick(), 1000)
+// class Clock extends Component {
+//     constructor(props) {
+//         super(props)
+//         this.state = { date: new Date() }
+//     }
 
-    }
+//     // Called immediately after a component is mounted. Setting state here will trigger re-rendering.
+//     componentDidMount() {
+//         this.timerID = setInterval(
+//             () => this.tick(), 1000)
 
-    // Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as cancelled network requests, or cleaning up any DOM elements created in componentDidMount.
-    componentWillUnmount() {
-        clearInterval(this.timerID)
-    }
+//     }
 
-    tick() {
-        this.setState({ date: new Date() })
-    }
+//     // Called immediately before a component is destroyed. Perform any necessary cleanup in this method, such as cancelled network requests, or cleaning up any DOM elements created in componentDidMount.
+//     componentWillUnmount() {
+//         clearInterval(this.timerID)
+//     }
+
+//     tick() {
+//         this.setState({ date: new Date() })
+//     }
 
 
-    render() {
-        return (
-            <div>
-                <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
-            </div>
-        );
-    }
+//     render() {
+//         return (
+//             <div>
+//                 <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+//             </div>
+//         );
+//     }
 
-}
+// }
 
-export default Clock;
+// export default Clock;

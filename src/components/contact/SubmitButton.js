@@ -7,11 +7,11 @@ const SubmitButton = (props) => {
     )
 }
 
-const UpdateButtonStatus = (formData) => {
-    (!(formData.firstName === "") && !(formData.lastName === "") && !(formData.email === ""))
-        ? this.setState({ submitButtonDisabled: false })
-        : this.setState({ submitButtonDisabled: true })
-}
+// const UpdateButtonStatus = (formData) => {
+//     (!(formData.firstName === "") && !(formData.lastName === "") && !(formData.email === ""))
+//         ? this.setState({ submitButtonDisabled: false })
+//         : this.setState({ submitButtonDisabled: true })
+// }
 
 export default SubmitButton
 
